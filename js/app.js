@@ -1,7 +1,6 @@
 'use strict';
 
 let myContainer = document.getElementById('cookieStand');
-let seattleList = document.getElementById('seattle');
 
 // console.log(myContainer);
 
@@ -33,7 +32,10 @@ let seattle = {
   render: function () {
     this.calCookiesSoldPerHr();
     // console.log('I am here');
-    let seattleList = document.getElementById('seattle-stand');
+    let seattleList = document.getElementById('cookieStand');
+    let seattleheader = document.createElement('h1');
+    seattleheader.textContent = 'Seattle'
+    seattleList.appendChild(seattleheader);
     for (let i = 0; i < storeHours.length; i++) {
       let li = document.createElement('li');
       li.textContent = `${storeHours[i]}: ${this.cookiesSold[i]}`;
@@ -73,7 +75,10 @@ let tokyo = {
   render: function () {
     this.calCookiesSoldPerHr();
     // console.log('I am here');
-    let tokyoList = document.getElementById('tokyo-stand');
+    let tokyoList = document.getElementById('cookieStand');
+    let tokyoheader = document.createElement('h1');
+    tokyoheader.textContent = 'Tokyo'
+    tokyoList.appendChild(tokyoheader);
     for (let i = 0; i < storeHours.length; i++) {
       let li = document.createElement('li');
       li.textContent = `${storeHours[i]}: ${this.cookiesSold[i]}`;
@@ -113,15 +118,18 @@ let Dubai = {
   render: function () {
     this.calCookiesSoldPerHr();
     // console.log('I am here');
-    let tokyoList = document.getElementById('dubai-stand');
+    let dubaiList = document.getElementById('cookieStand');
+    let dubaiheader = document.createElement('h1');
+    dubaiheader.textContent = 'Dubai'
+    dubaiList.appendChild(dubaiheader);
     for (let i = 0; i < storeHours.length; i++) {
       let li = document.createElement('li');
       li.textContent = `${storeHours[i]}: ${this.cookiesSold[i]}`;
-      tokyoList.appendChild(li);
+      dubaiList.appendChild(li);
     }
     let li = document.createElement('li');
     li.textContent = `Total Cookies: ${this.soldTotal}`;
-    tokyoList.appendChild(li);
+    dubaiList.appendChild(li);
 
   },
 };
@@ -129,9 +137,9 @@ let Dubai = {
 Dubai.render();
 
 
-let storeTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+// let storeTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-let paris = {
+let Paris = {
   name: 'Paris',
   minCustomers: 20,
   maxCustomer: 38,
@@ -155,7 +163,10 @@ let paris = {
   render: function () {
     this.calCookiesSoldPerHr();
     // console.log('I am here');
-    let parisList = document.getElementById('pariso-stand');
+    let parisList = document.getElementById('cookieStand');
+    let parisheader = document.createElement('h1');
+    parisheader.textContent = 'Paris'
+    parisList.appendChild(parisheader);
     for (let i = 0; i < storeHours.length; i++) {
       let li = document.createElement('li');
       li.textContent = `${storeHours[i]}: ${this.cookiesSold[i]}`;
@@ -168,7 +179,7 @@ let paris = {
   },
 };
 
-paris.render();
+Paris.render();
 
 
 let lima = {
@@ -195,7 +206,10 @@ let lima = {
   render: function () {
     this.calCookiesSoldPerHr();
     // console.log('I am here');
-    let limaList = document.getElementById('lima-stand');
+    let limaList = document.getElementById('cookieStand');
+    let limaheader = document.createElement('h1');
+    limaheader.textContent = 'Lima'
+    limaList.appendChild(limaheader);
     for (let i = 0; i < storeHours.length; i++) {
       let li = document.createElement('li');
       li.textContent = `${storeHours[i]}: ${this.cookiesSold[i]}`;
