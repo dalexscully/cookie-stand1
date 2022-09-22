@@ -12,6 +12,7 @@ function randomCustomerEachHr(min, max) {
 let storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 // *********** This is the Constructor Function **********
+
 let CityArea = function (name, minCustomer, maxCustomer, avgCookie) {
   this.name = name;
   this.minCustomer = minCustomer;
@@ -27,7 +28,7 @@ let CityArea = function (name, minCustomer, maxCustomer, avgCookie) {
 // *********** This is the Prototype Methods ***********
 
 CityArea.prototype.randomCustomerEachHr = function () {
-  return randomCustomerEachHr (23, 65);
+  return randomCustomerEachHr(23, 65);
 };
 
 CityArea.prototype.calCookiesSoldPerHr = function () {
@@ -59,10 +60,12 @@ function renderHeader() {
 
 }
 
+
+
 renderHeader();
 
 
-CityArea.prototype.render = function(){
+CityArea.prototype.render = function () {
 
   let row2 = document.createElement('tr');
   tableElem.appendChild(row2);
@@ -83,7 +86,33 @@ CityArea.prototype.render = function(){
   row2.appendChild(dailySaleOfElem);
 };
 
+function renderfooter() {
+  let row3 = document.createElement('tr');
+  row3.textContent = 'Total';
+  tableElem.appendChild(row3);
 
+  let grandTotal = 0;
+
+  for (let i = 0; i < storeHours.length; i++) {
+    let Total = 0;
+    for (let j = 0; j < allStores.length; j++) {
+      Total += allStores[j].cookiesSold[i];
+
+    }
+    // console.log(Total);
+
+    let td1Elem = document.createElement('td');
+    td1Elem.textContent = Total;
+    row3.appendChild(td1Elem);
+
+    grandTotal += Total;
+
+  }
+
+  let td2Elem = document.createElement('td');
+  td2Elem.textContent = grandTotal;
+  row3.appendChild(td2Elem);
+}
 new CityArea('Seattle', 23, 65, 6.3);
 new CityArea('Tokyo', 3, 24, 1.2);
 new CityArea('Dubai', 11, 38, 3.7);
@@ -91,13 +120,17 @@ new CityArea('Paris', 20, 38, 2.3);
 new CityArea('Lima', 2, 16, 4.6);
 
 
-function renderAll(){
-  for (let i = 0; i < allStores.length; i++){
+function renderAll() {
+  for (let i = 0; i < allStores.length; i++) {
     allStores[i].calCookiesSoldPerHr();
     allStores[i].render();
   }
 }
+
+
 renderAll();
+
+renderfooter();
 
 
 
