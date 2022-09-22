@@ -11,9 +11,7 @@ html * {
   border: solid 1px black;
 }
 
-#hero {
-  width: 400px;
-}  
+
 th {
   background-color: antiquewhite;
 }
@@ -36,4 +34,12 @@ h2 {
 
 p {
   background-color: aquamarine;
+}
+
+button {
+  transition: 350ms;
+}
+
+button:hover{
+  background-color: gray;
 }
