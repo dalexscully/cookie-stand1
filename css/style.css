@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); */
 
 
 body {
@@ -57,7 +57,7 @@ justify-content: left;
 }
 
 h2 {
-  font-family: 'Dancing Script', cursive;
+  /* font-family: 'Dancing Script', cursive; */
   font-size: large;
   color: rgb(152, 41, 111)
 }
@@ -88,7 +88,7 @@ h2 {
 }
 
 p {
-  font-family: 'Dancing Script', cursive;
+  /* font-family: 'Dancing Script', cursive; */
   font-size: large;
   background-color: rgb(195, 222, 213);
 }
